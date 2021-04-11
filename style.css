@@ -5,13 +5,16 @@ body {
   background: #bebdbd;
   font-family: "Montserrat";
 }
+html {
+  scroll-behavior: auto;
+}
 
 #util-1 {
   display: flex;
   flex-direction: column;
 
   width: 88vw;
-  align-items: center;
+  align-items: center ;
   border-radius: 50px;
   background: #bebdbd;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
@@ -28,6 +31,7 @@ body {
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
+  background-color: #bebdbd;
   }
 ::-webkit-scrollbar-track {
   border: 1px solid rgb(91, 92, 91);
