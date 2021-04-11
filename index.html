@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/e25b852c87.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@300;400;500&family=Old+Standard+TT&family=Cinzel&family=Krona+One&family=Playfair+Display+SC&family=Yeon+Sung&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <title> Chat App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/e25b852c87.js" crossorigin="anonymous">
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@300;400;500&family=Old+Standard+TT&family=Cinzel&family=Krona+One&family=Playfair+Display+SC&family=Yeon+Sung&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
+  <body>
     <div id="util-1">
-        <h4 style="border-bottom:1px solid #7a7979;">1->Many Chat Room</h4>
+      <h4 style="border-bottom: 1px solid #7a7979">1->Many Chat Room</h4>
 
-            <div id="chat" style="height: 72vh;">
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: space-evenly;">
+      <div id="chat" style="height: 72vh"></div>
+      <div
+        style="display: flex; flex-direction: column; align-items: space-evenly"
+      >
         <div>
-            <select id="name-input" >
-                <option selected>Select your Username</option>
-                <option value="user1">User1</option>
-                <option value="user2">User2</option>
-                <option value="user3">User3</option>
-                <option value="user4">User4</option>
-                <option value="user5">User5</option>
+          <select id="name-input">
+            <option selected>Select your Username</option>
+            <option value="user1">User1</option>
+            <option value="user2">User2</option>
+            <option value="user3">User3</option>
+            <option value="user4">User4</option>
+            <option value="user5">User5</option>
+          </select>
+        </div>
+        <div
+          style="
+            display: flex;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 5px;
+            justify-content: space-evenly;
+            max-width: 40vw;
+            background-color: #ddd8d8;
 
-            </select>
+          "
+        >
+          <i style="font-size: 40px" class="fas fa-sms"></i>
+          <textarea
+            id="chat-input"
+            placeholder="Enter your message and it the send button"
+            rows="3"
+            cols="200"
+          >
+          </textarea>
+          <button id="send">Send</button>
         </div>
-        <div style="display: flex;border:1px solid black;border-radius:8px;padding:5px; justify-content: space-evenly;max-width: 40vw;">
-            <i style="font-size:40px;" class="fas fa-sms"></i>
-            <textarea id="chat-input" placeholder="Enter your message and it the send button" rows="3" cols="200"> </textarea>
-            <button id="send"> Send </button>
-        </div>
+      </div>
     </div>
-</div>
 
-    <script src='./index.js'>
-    </script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
