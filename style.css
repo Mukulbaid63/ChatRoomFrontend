@@ -1,55 +1,49 @@
-body{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #bebdbd;
-    font-family: "Montserrat";
-
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #bebdbd;
+  font-family: "Montserrat";
 }
 
-#util-1{
-   display: flex;
-   flex-direction: column;
-   
-   width: 88vw;
-   align-items: center;
-   border-radius: 50px;
-   background: #bebdbd;
-   box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
-}
-#chat{
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
+#util-1 {
+  display: flex;
+  flex-direction: column;
 
-    align-items: flex-start;
+  width: 88vw;
+  align-items: center;
+  border-radius: 50px;
+  background: #bebdbd;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+#chat {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
 }
 
-.message{
-    font-size: 20px;
-    font-weight: 500;
-    font-family: "Montserrat";
-
+.message {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Montserrat";
 }
-.name{
-    font-size: 15px;
-    font-weight: 400;
-    font-family: "Lato";
+.name {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Lato";
 }
-#chat-input{
-    background-color: #bebdbd;
-    border: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
+#chat-input {
+  background-color: #ddd8d8;
+  border: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-cite{
-    font-size: 10px;
-    font-weight: 500;
-    color: rgb(48, 41, 41);
-
+cite {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgb(48, 41, 41);
 }
 /* cite:hover{
 
@@ -57,20 +51,24 @@ cite{
 
 } */
 
-#name-input{
-    background-color: #bebdbd;
-    border: 0px;
-    cursor: pointer;
-    font-size: 15px;
-    border-bottom:1px solid black ;
-    margin-bottom: 5px;
-
+#name-input {
+  background-color: #bebdbd;
+  border: 0px;
+  cursor: pointer;
+  font-size: 15px;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
 }
-#send{
-    background-color: #bebdbd;
-    cursor: pointer;
-    
+#send {
+  background-color: #bebdbd;
+  cursor: pointer;
 }
-button:focus { outline: none; }
-textarea:focus { outline: none; }
-#chat-input:focus { outline: none; }
+button:focus {
+  outline: none;
+}
+textarea:focus {
+  outline: none;
+}
+#chat-input:focus {
+  outline: none;
+}
