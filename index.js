@@ -34,6 +34,34 @@ document.querySelector("button").addEventListener("click", function () {
     socket.send(`${data}`);
   }
 });
+document.querySelector("#chat-input").addEventListener('keypress',function (evt) {
+  if(evt.keyCode==13){
+  const currentDate = new Date();
+
+  currentDayOfMonth = currentDate.getDate();
+  currentMonth = currentDate.getMonth();
+  currentYear = currentDate.getFullYear();
+  time = currentDate.toLocaleTimeString();
+  dateString =
+    time +
+    " " +
+    currentDayOfMonth +
+    "-" +
+    (currentMonth + 1) +
+    "-" +
+    currentYear;
+  const message = document.querySelector("#util-1 #chat-input").value;
+  const name = document.querySelector("#util-1 #name-input").value;
+  if (name === "Select your Username") alert("Select your Username!!!");
+  else if (message === "") alert("Please enter a message!!!");
+  else {
+    let data = [];
+    data.push(name);
+    data.push(message);
+    data.push(dateString);
+    socket.send(`${data}`);
+  }
+}})
 
 socket.addEventListener("message", function (event) {
   if (
