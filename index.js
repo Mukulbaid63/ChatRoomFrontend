@@ -76,7 +76,7 @@ socket.addEventListener("message", function (event) {
     );
   else {
     document.querySelector("#chat").innerHTML +=
-      `<div style="max-width:30%"><span class="name">${event.data.substring(
+      `<div style="word-wrap: break-word;"><span class="name">${event.data.substring(
         0,
         5
       )}</span>: <span class="message">${event.data.substring(
