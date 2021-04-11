@@ -81,9 +81,9 @@ socket.addEventListener("message", function (event) {
         5
       )}</span>: <span class="message">${event.data.substring(
         6,
-        event.data.length - 21
+        event.data.length - 22
       )}</span> <cite>${event.data.substring(
-        event.data.length - 20
+        event.data.length - 21
       )}</cite></span>` + "<br/>";
   }
 });
