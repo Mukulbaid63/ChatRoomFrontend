@@ -24,6 +24,8 @@ document.querySelector("button").addEventListener("click", function () {
     currentYear;
   const message = document.querySelector("#util-1 #chat-input").value;
   const name = document.querySelector("#util-1 #name-input").value;
+  document.querySelector("textarea").value=""
+
   if (name === "Select your Username") alert("Select your Username!!!");
   else if (message === "") alert("Please enter a message!!!");
   else {
@@ -52,6 +54,7 @@ document.querySelector("#chat-input").addEventListener('keypress',function (evt)
     currentYear;
   const message = document.querySelector("#util-1 #chat-input").value;
   const name = document.querySelector("#util-1 #name-input").value;
+  document.querySelector("textarea").value=""
   if (name === "Select your Username") alert("Select your Username!!!");
   else if (message === "") alert("Please enter a message!!!");
   else {
