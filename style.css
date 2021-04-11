@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #bebdbd;
-  font-family: "Montserrat";
+  font-family: "Kiwi Maru";
 }
 html {
   scroll-behavior: auto;
@@ -50,7 +50,7 @@ html {
 .message {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Montserrat";
+  font-family: 'Source Code Pro';
 }
 .name {
   font-size: 15px;
