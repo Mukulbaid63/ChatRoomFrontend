@@ -24,7 +24,7 @@ document.querySelector("button").addEventListener("click", function () {
     currentYear;
   const message = document.querySelector("#util-1 #chat-input").value;
   const name = document.querySelector("#util-1 #name-input").value;
-  document.querySelector("textarea").value=""
+  document.querySelector("textarea").value = "";
 
   if (name === "Select your Username") alert("Select your Username!!!");
   else if (message === "") alert("Please enter a message!!!");
@@ -36,54 +36,49 @@ document.querySelector("button").addEventListener("click", function () {
     socket.send(`${data}`);
   }
 });
-document.querySelector("#chat-input").addEventListener('keypress',function (evt) {
-  if(evt.keyCode==13){
-  const currentDate = new Date();
+document
+  .querySelector("#chat-input")
+  .addEventListener("keypress", function (evt) {
+    if (evt.keyCode == 13) {
+      const currentDate = new Date();
 
-  currentDayOfMonth = currentDate.getDate();
-  currentMonth = currentDate.getMonth();
-  currentYear = currentDate.getFullYear();
-  time = currentDate.toLocaleTimeString();
-  dateString =
-    time +
-    " " +
-    currentDayOfMonth +
-    "-" +
-    (currentMonth + 1) +
-    "-" +
-    currentYear;
-  const message = document.querySelector("#util-1 #chat-input").value;
-  const name = document.querySelector("#util-1 #name-input").value;
-  document.querySelector("textarea").value=""
-  if (name === "Select your Username") alert("Select your Username!!!");
-  else if (message === "") alert("Please enter a message!!!");
-  else {
-    let data = [];
-    data.push(name);
-    data.push(message);
-    data.push(dateString);
-    socket.send(`${data}`);
-  }
-}})
+      currentDayOfMonth = currentDate.getDate();
+      currentMonth = currentDate.getMonth();
+      currentYear = currentDate.getFullYear();
+      time = currentDate.toLocaleTimeString();
+      dateString =
+        time +
+        " " +
+        currentDayOfMonth +
+        "-" +
+        (currentMonth + 1) +
+        "-" +
+        currentYear;
+      const message = document.querySelector("#util-1 #chat-input").value;
+      const name = document.querySelector("#util-1 #name-input").value;
+      document.querySelector("textarea").value = "";
+      if (name === "Select your Username") alert("Select your Username!!!");
+      else if (message === "") alert("Please enter a message!!!");
+      else {
+        let data = [];
+        data.push(name);
+        data.push(message);
+        data.push(dateString);
+        socket.send(`${data}`);
+      }
+    }
+  });
 
 socket.addEventListener("message", function (event) {
-  if (
-    event.data ===
-    "MAX LIMIT REACHED"
-  )
+  if (event.data === "MAX LIMIT REACHED")
     alert(
       "The room is full, you are not allowed to chat but you can see the messages."
     );
   else {
+    var nameArr = event.data.split(",");
+    console.log(nameArr);
     document.querySelector("#chat").innerHTML +=
-      `<span style="word-wrap: break-word;"><span class="name">${event.data.substring(
-        0,
-        5
-      )}</span>: <span class="message">${event.data.substring(
-        6,
-        event.data.length - 22
-      )}</span> <cite>${event.data.substring(
-        event.data.length - 21
-      )}</cite></span>` + "<br/>";
+      `<span style="word-wrap: break-word;"><span class="name">${nameArr[0]}</span>: <span class="message">${nameArr[1]}</span> <cite>${nameArr[2]}</cite></span>` +
+      "<br/>";
   }
 });
