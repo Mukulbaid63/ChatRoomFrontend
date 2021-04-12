@@ -62,7 +62,10 @@ document
       else {
         let data = [];
         data.push(name);
+        data.push("$$")
         data.push(message);
+        data.push("$$")
+
         data.push(dateString);
         socket.send(`${data}`);
       }
@@ -70,12 +73,14 @@ document
   });
 
 socket.addEventListener("message", function (event) {
+
   if (event.data === "MAX LIMIT REACHED")
     alert(
       "The room is full, you are not allowed to chat but you can see the messages."
     );
   else {
-    var nameArr = event.data.split(",");
+    console.log(event.data);
+    var nameArr = event.data.split(",$$,");
     console.log(nameArr);
     document.querySelector("#chat").innerHTML +=
       `<span style="word-wrap: break-word;"><span class="name">${nameArr[0]}</span>: <span class="message">${nameArr[1]}</span> <cite>${nameArr[2]}</cite></span>` +
