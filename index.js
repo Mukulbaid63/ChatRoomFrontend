@@ -10,31 +10,33 @@ let dateString = "";
 document.querySelector("button").addEventListener("click", function () {
   const currentDate = new Date();
 
-  currentDayOfMonth = currentDate.getDate();
-  currentMonth = currentDate.getMonth();
-  currentYear = currentDate.getFullYear();
-  time = currentDate.toLocaleTimeString();
-  dateString =
-    time +
-    " " +
-    currentDayOfMonth +
-    "-" +
-    (currentMonth + 1) +
-    "-" +
-    currentYear;
-  const message = document.querySelector("#util-1 #chat-input").value;
-  const name = document.querySelector("#util-1 #name-input").value;
-  document.querySelector("textarea").value = "";
+      currentDayOfMonth = currentDate.getDate();
+      currentMonth = currentDate.getMonth();
+      currentYear = currentDate.getFullYear();
+      time = currentDate.toLocaleTimeString();
+      dateString =
+        time +
+        " " +
+        currentDayOfMonth +
+        "-" +
+        (currentMonth + 1) +
+        "-" +
+        currentYear;
+      const message = document.querySelector("#util-1 #chat-input").value;
+      const name = document.querySelector("#util-1 #name-input").value;
+      document.querySelector("textarea").value = "";
+      if (name === "Select your Username") alert("Select your Username!!!");
+      else if (message === "") alert("Please enter a message!!!");
+      else {
+        let data = [];
+        data.push(name);
+        data.push("$$")
+        data.push(message);
+        data.push("$$")
 
-  if (name === "Select your Username") alert("Select your Username!!!");
-  else if (message === "") alert("Please enter a message!!!");
-  else {
-    let data = [];
-    data.push(name);
-    data.push(message);
-    data.push(dateString);
-    socket.send(`${data}`);
-  }
+        data.push(dateString);
+        socket.send(`${data}`);
+      }
 });
 document
   .querySelector("#chat-input")
